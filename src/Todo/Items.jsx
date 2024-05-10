@@ -6,18 +6,15 @@ function Items({ todo, setTodo,setInput,setEdit }) {
 
     
   const onDelete = (id) => {
-    axiosInstance.delete(`/todo/manage/${id}`)
+    axiosInstance.delete(`/todo/manage/${id}/`)
     setTodo(todo.filter((to) => to.id !== id));
   };
 
   const onComplete = (id) => {
-    const complete = todo.map((to) => {
-      if (to.id === id) {
-        return { ...to, status: !to.status };
-      }
-      return to;
-    });
-    setTodo(complete);
+    const data = new FormData()
+    data.append('completed', true)
+    axiosInstance.patch(`/todo/manage/${id}/`,data)
+
   };
 
   const onEdit=(id)=>{
@@ -32,7 +29,9 @@ function Items({ todo, setTodo,setInput,setEdit }) {
         <ul className="items">
           {todo && todo.map((to, index) => (
             <li className="list" id={index}>
-              <div className="list-item text-black">{to.todo}</div>
+              <div className={`list-item text-black ${to.completed ? 'line-through' : ''}`}>
+  {to.todo}
+</div>
 
               <span>
                 <p
