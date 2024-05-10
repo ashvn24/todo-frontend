@@ -1,0 +1,64 @@
+
+.card{
+    
+    height: auto;
+    width:400px;
+    margin-left: 6px;
+    margin-top: 40px;
+
+}
+.group{
+    display: flex;
+    justify-content: center;
+}
+.text{
+    width:300px;
+    height:40px;
+    border:2px solid rgb(23, 119, 47);
+    border-radius: 5px;
+
+}
+.text2{
+    width:300px;
+    height:40px;
+    border:2px solid rgb(128, 0, 0);
+    border-radius: 5px;
+
+}
+.btns{
+    height:40px;
+    width:70px;
+}
+.items{
+    list-style-type: none;
+    padding: 0;
+}
+.list{
+    padding: 10px;
+    background-color: rgb(190, 188, 185);
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    
+}
+.list .list-item{
+    flex: 1;
+}
+.key{
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+#to{
+    text-decoration: line-through;
+    opacity: .6;
+}
+#tick{
+    color:green;
+}
+#edit{
+    color:blue
+}
+#trash{
+    color:orange
+}
